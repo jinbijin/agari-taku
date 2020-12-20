@@ -9,6 +9,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgariTaku.Client", "AgariTa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgariTaku.Shared", "AgariTaku\Shared\AgariTaku.Shared.csproj", "{B8B3D9C1-43A8-4B3D-B849-5A57D7497FF0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{1E36D648-33CE-45B4-8D70-BBE762131A60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{EEF3DD4B-A157-4D15-AC31-F229FC0908FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{4F36E383-865C-4103-88C6-920DB653A137}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CD0980CE-6EDA-4300-89C5-74CEEFACA468}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +41,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3DBBCEC3-88F6-4686-A5CC-6C4054DAA175} = {EEF3DD4B-A157-4D15-AC31-F229FC0908FC}
+		{C6D59285-10A0-45C7-A2E5-DFD6BDABFC49} = {1E36D648-33CE-45B4-8D70-BBE762131A60}
+		{B8B3D9C1-43A8-4B3D-B849-5A57D7497FF0} = {4F36E383-865C-4103-88C6-920DB653A137}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {87725310-6E07-4C1B-B745-C713AC131D1D}
