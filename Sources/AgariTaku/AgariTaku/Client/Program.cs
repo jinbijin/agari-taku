@@ -1,11 +1,12 @@
+using AgariTaku.Client.Injector;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Routing;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
+using SimpleInjector;
+using SimpleInjector.Lifestyles;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace AgariTaku.Client
@@ -17,7 +18,21 @@ namespace AgariTaku.Client
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("#app");
 
+            Container container = new();
+            container.Options.DefaultScopedLifestyle = new AsyncScopedLifestyle();
+
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            builder.Services.AddSingleton<IComponentActivator>(new SimpleInjectorComponentActivator(container));
+
+            foreach (Type type in container.GetTypesToRegister<IComponent>(typeof(App).Assembly, typeof(NavLink).Assembly))
+            {
+                container.Register(type, type, Lifestyle.Scoped);
+            }
+
+            foreach (Type type in container.GetTypesToRegister<IComponent>(typeof(RouteView).Assembly))
+            {
+                container.Register(type, type, Lifestyle.Singleton);
+            }
 
             await builder.Build().RunAsync();
         }
