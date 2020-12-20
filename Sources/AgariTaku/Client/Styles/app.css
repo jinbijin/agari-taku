@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body, .main {
+    height: 100vh;
+    width: 100vw;
+}
+
 #blazor-error-ui {
     background: lightyellow;
     bottom: 0;
