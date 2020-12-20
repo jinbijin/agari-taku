@@ -350,4 +350,4 @@ MigrationBackup/
 .ionide/
 
 # Compiled css
-Sources/AgariTaku/AgariTaku/Client/wwwroot/css/app.css
+Sources/AgariTaku/Client/wwwroot/css/app.css
