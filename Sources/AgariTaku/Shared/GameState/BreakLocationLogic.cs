@@ -6,7 +6,7 @@ namespace AgariTaku.Shared.GameState
     {
         public int DetermineBreak(Player dealer, int die1, int die2)
         {
-            return ((4 - (int)dealer) * 34 + (die1 + die2)) % 68; // Break location is per stack of two
+            return ((4 - (int)dealer) * 17 + (die1 + die2)) % 68; // Break location is per stack of two
         }
     }
 }
