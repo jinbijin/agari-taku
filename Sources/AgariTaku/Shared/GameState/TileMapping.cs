@@ -1,6 +1,6 @@
 ﻿using AgariTaku.Shared.Types;
+using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 
 namespace AgariTaku.Shared.GameState
 {
@@ -19,5 +19,7 @@ namespace AgariTaku.Shared.GameState
         }
 
         public TileValue this[int index] => _tiles[_wallIndexConverter.Convert(_breakLocation, index)];
+
+        public IReadOnlyCollection<TileValue> Slice(int index, int count) => Enumerable.Range(index, count).Select(i => this[i]).ToList();
     }
 }
