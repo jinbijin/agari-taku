@@ -17,9 +17,9 @@ namespace AgariTaku.Shared.GameState
             _wallIndexConverter = wallIndexConverter;
         }
 
-        public ITileMapping Create(Player dealer)
+        public ITileMapping Create(Player dealer, int die1, int die2)
         {
-            return new TileMapping(_generator, _shuffler, _breakLogic, _wallIndexConverter, dealer);
+            return new TileMapping(_generator, _shuffler, _breakLogic, _wallIndexConverter, dealer, die1, die2);
         }
     }
 }

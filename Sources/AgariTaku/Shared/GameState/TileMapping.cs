@@ -11,10 +11,10 @@ namespace AgariTaku.Shared.GameState
         private readonly TileValue[] _tiles;
         private readonly int _breakLocation;
 
-        public TileMapping(ITileGenerator generator, IShuffler shuffler, IBreakLocationLogic breakLogic, IWallIndexConverter wallIndexConverter, Player player)
+        public TileMapping(ITileGenerator generator, IShuffler shuffler, IBreakLocationLogic breakLogic, IWallIndexConverter wallIndexConverter, Player player, int die1, int die2)
         {
             _tiles = shuffler.Shuffle(generator.GenerateTiles()).ToArray();
-            _breakLocation = breakLogic.DetermineBreak(player, RandomNumberGenerator.GetInt32(6), RandomNumberGenerator.GetInt32(6));
+            _breakLocation = breakLogic.DetermineBreak(player, die1, die2);
             _wallIndexConverter = wallIndexConverter;
         }
 

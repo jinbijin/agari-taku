@@ -4,6 +4,6 @@ namespace AgariTaku.Shared.GameState
 {
     public interface ITileMappingFactory
     {
-        ITileMapping Create(Player dealer);
+        ITileMapping Create(Player dealer, int die1, int die2);
     }
 }
